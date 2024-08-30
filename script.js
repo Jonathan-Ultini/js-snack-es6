@@ -1,4 +1,4 @@
-// SNACK 1: Placeholders Tavolo Vip
+//#: SNACK 1: Placeholders Tavolo Vip
 const tableName = "Tavolo Vip";
 const guests = [
   'Brad Pitt',
@@ -25,11 +25,11 @@ console.log(placeholders);
 const placeholdersList = document.getElementById('placeholders-list');
 placeholders.forEach(placeholder => {
   const listItem = document.createElement('li');
-  listItem.innerHTML = `Nome: ${placeholder.guestName}, Posto: ${placeholder.place}, Tavolo: ${placeholder.tableName}`;
+  listItem.innerHTML = `Nome: <b>${placeholder.guestName}</b>, Posto: <b>${placeholder.place}</b>, Tavolo: <b>${placeholder.tableName}</b>`;
   placeholdersList.appendChild(listItem);
 });
 
-// SNACK 2: Lista studenti
+//#: SNACK 2: Lista studenti
 const students = [
   { Id: 213, Name: 'Marco della Rovere', Grades: 78 },
   { Id: 110, Name: 'Paola Cortellessa', Grades: 96 },
@@ -60,7 +60,7 @@ console.log('Studenti con voti superiori a 70:', highGradesStudents);
 const highGradesList = document.getElementById('high-grades-list');
 highGradesStudents.forEach(student => {
   const listItem = document.createElement('li');
-  listItem.innerHTML = `Nome: ${student.Name}, Voti: ${student.Grades}`;
+  listItem.innerHTML = `Nome: <b>${student.Name}</b>, Voti: <b>${student.Grades}</b>`;
   highGradesList.appendChild(listItem);
 });
 
@@ -72,6 +72,65 @@ console.log('Studenti con voti superiori a 70 e ID superiore a 120:', highGrades
 const highGradesAndIdList = document.getElementById('high-grades-and-id-list');
 highGradesAndIdStudents.forEach(student => {
   const listItem = document.createElement('li');
-  listItem.innerHTML = `Nome: ${student.Name}, Voti: ${student.Grades}, ID: ${student.Id}`;
+  listItem.innerHTML = `Nome: <b>${student.Name}</b>, Voti: <b>${student.Grades}</b>, ID: <b>${student.Id}</b>`;
   highGradesAndIdList.appendChild(listItem);
+});
+
+//#:Snack 3: Array di biciclette
+const bikes = [
+  { nome: 'Argon 18', peso: 8.2 },
+  { nome: 'Gazelle', peso: 6.8 },
+  { nome: 'Bergamont', peso: 8.5 },
+  { nome: 'Look', peso: 7.1 },
+];
+
+// Trova la bici con il peso minore
+const [lightestBike] = bikes.sort((a, b) => a.peso - b.peso);
+
+// Destrutturazione e stampa in console
+const { nome, peso } = lightestBike;
+console.log(`La bici più leggera è la ${nome} con un peso di ${peso} kg.`);
+
+// Stampa in pagina
+const lightBikes = document.getElementById('light-bikes');
+const listBike = document.createElement('li');
+listBike.innerHTML = `La bici più leggera è la: <b>${nome}</b>, con un peso di <b>${peso}</b> kg.`;
+
+// Aggiunge l'elemento creato alla lista
+lightBikes.appendChild(listBike);
+
+
+//#: Snack 4: squadre di calcio
+// Funzione per generare numeri random tra due valori
+const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+
+// Array di squadre
+const teams = [
+  { nome: 'Juventus', punti: 0, falliSubiti: 0 },
+  { nome: 'Foggia', punti: 0, falliSubiti: 0 },
+  { nome: 'Napoli', punti: 0, falliSubiti: 0 },
+  { nome: 'Inter', punti: 0, falliSubiti: 0 }
+];
+
+// Assegna valori random per punti fatti e falli subiti
+teams.forEach(team => {
+  team.punti = getRandomNumber(0, 100);
+  team.falliSubiti = getRandomNumber(20, 50);
+});
+
+// Crea un nuovo array con solo nomi e falli subiti
+const teamFouls = teams.map(({ nome, falliSubiti }) => ({ nome, falliSubiti }));
+
+// Ordina le squadre per falli subiti in ordine decrescente (dal maggiore al minore)
+teams.sort((a, b) => b.falliSubiti - a.falliSubiti);
+
+// Stampa in console
+console.log('Squadre e falli subiti:', teamFouls);
+
+// Stampa in pagina
+const foulTeam = document.getElementById('foul-teams');
+teams.forEach(team => {
+  const listTeam = document.createElement('li');
+  listTeam.innerHTML = `Nome squdra: <b>${team.nome}</b>, Falli subiti: <b>${team.falliSubiti}</b>`;
+  foulTeam.appendChild(listTeam);
 });
