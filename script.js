@@ -15,11 +15,8 @@ const guests = [
 ];
 
 // Trasformo ogni elemento array in oggetto
-const placeholders = guests.map((guest, index) => ({
-  tableName: tableName,
-  guestName: guest,
-  place: index + 1
-}));
+const placeholders = guests.map((guest, index) => ({ tableName: tableName, guestName: guest, place: index + 1 }));
+
 
 // Stampa in console
 console.log(placeholders);
@@ -68,7 +65,7 @@ highGradesStudents.forEach(student => {
 });
 
 // 3. Creare una lista di tutti gli studenti che hanno un totale di voti superiore a 70 e id superiore a 120
-const highGradesAndIdStudents = students.filter(student => student.Grades > 70 && student.Id > 120);
+const highGradesAndIdStudents = highGradesStudents.filter(student => student.Id > 120);
 console.log('Studenti con voti superiori a 70 e ID superiore a 120:', highGradesAndIdStudents);
 
 // Mostra in pagina
