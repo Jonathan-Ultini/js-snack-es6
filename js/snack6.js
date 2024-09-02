@@ -8,7 +8,8 @@ const animals = [
   { name: 'gallina', family: 'fasianidi', class: 'uccelli' },
   { name: 'gatto', family: 'felidi', class: 'mammiferi' },
   { name: 'pantera', family: 'felidi', class: 'mammiferi' },
-  { name: 'piccione', family: 'fasianidi', class: 'uccelli' }
+  { name: 'piccione', family: 'fasianidi', class: 'uccelli' },
+  { name: 'medusa', family: 'meduse', class: 'cnidari' }
 ];
 
 const mammiferi = animals.filter(animal => animal.class === 'mammiferi');
