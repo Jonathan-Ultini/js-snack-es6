@@ -14,10 +14,10 @@ const animals = [
 
 const mammiferi = animals.filter(animal => animal.class === 'mammiferi');
 
-const ulElement = document.getElementById('animal');
+const ulElement3 = document.getElementById('animal');
 
 mammiferi.forEach(animal => {
   const liElement = document.createElement('li');
   liElement.innerHTML = `${animal.name} (Famiglia: ${animal.family}, Classe: ${animal.class})`;
-  ulElement.appendChild(liElement);
+  ulElement3.appendChild(liElement);
 });

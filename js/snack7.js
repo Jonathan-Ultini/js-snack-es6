@@ -17,10 +17,10 @@ const frasi = persone.map(persona => {
 });
 
 
-const ulElement = document.getElementById('drive');
+const ulElement2 = document.getElementById('drive');
 
 frasi.forEach(frase => {
   const liElement = document.createElement('li');
   liElement.innerHTML = frase;
-  ulElement.appendChild(liElement);
+  ulElement2.appendChild(liElement);
 });
