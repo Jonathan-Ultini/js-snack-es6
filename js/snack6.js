@@ -18,6 +18,6 @@ const ulElement = document.getElementById('animal');
 
 mammiferi.forEach(animal => {
   const liElement = document.createElement('li');
-  liElement.textContent = `${animal.name} (Famiglia: ${animal.family}, Classe: ${animal.class})`;
+  liElement.innerHTML = `${animal.name} (Famiglia: ${animal.family}, Classe: ${animal.class})`;
   ulElement.appendChild(liElement);
 });
